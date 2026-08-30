@@ -170,6 +170,7 @@ export default class Tokenizer {
         type: TokenType.VARIABLE,
         regex: cfg.variableTypes ? regex.variable(cfg.variableTypes) : undefined,
       },
+      // Typographic ‘…’ quotes (U+2018/U+2019), commonly inserted by copy-paste. See #942.
       { type: TokenType.STRING, regex: regex.string([...cfg.stringTypes, '‘’']) },
       {
         type: TokenType.IDENTIFIER,
